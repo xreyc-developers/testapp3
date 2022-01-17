@@ -17,7 +17,10 @@ const app = express();
 // });
 
 require("./initialize/db")();
-app.use(cors());
+
+app.options("*", cors({ origin: 'https://main.d24qv3za7w153c.amplifyapp.com', optionsSuccessStatus: 200 }));
+app.use(cors({ origin: "https://main.d24qv3za7w153c.amplifyapp.com", optionsSuccessStatus: 200 }));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 require("./initialize/routes")(app);
