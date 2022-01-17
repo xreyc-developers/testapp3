@@ -3,10 +3,10 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const app = express();
 
-// app.use(cors({
-//     origin: "https://main.d24qv3za7w153c.amplifyapp.com",
-//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-// }));
+app.use(cors({
+    origin: "https://main.d24qv3za7w153c.amplifyapp.com",
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
 // app.use(function (req, res, next) {
 //     res.setHeader('Access-Control-Allow-Origin', 'https://main.d24qv3za7w153c.amplifyapp.com');
@@ -18,8 +18,8 @@ const app = express();
 
 require("./initialize/db")();
 
-app.options("*", cors({ origin: 'https://main.d24qv3za7w153c.amplifyapp.com', optionsSuccessStatus: 200 }));
-app.use(cors({ origin: "https://main.d24qv3za7w153c.amplifyapp.com", optionsSuccessStatus: 200 }));
+//app.options("*", cors({ origin: 'https://main.d24qv3za7w153c.amplifyapp.com', optionsSuccessStatus: 200 }));git
+//app.use(cors({ origin: "https://main.d24qv3za7w153c.amplifyapp.com", optionsSuccessStatus: 200 }));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
